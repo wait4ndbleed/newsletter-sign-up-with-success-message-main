@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import Image from "next/image";
+import svgImgDesktop from "./assets/images/illustration-sign-up-desktop.svg";
+import svgImgMobile from "./assets/images/illustration-sign-up-mobile.svg";
+import svgIcon from "./assets/images/icon-list.svg";
+import svgSuccess from "./assets/images/icon-success.svg";
 
 type Input = {
   email: string;
@@ -47,33 +52,25 @@ export default function Home() {
             <ul>
               <li className="flex">
                 <div>
-                  <img
-                    src="./assets/images/icon-list.svg"
-                    className="inline-block pr-4"
-                    alt=""
-                  />
+                  <Image src={svgIcon} width={21} height={21} alt="" />
                 </div>
-                <div>Product discovery and building what matters</div>
+                <div className="pl-4">
+                  Product discovery and building what matters
+                </div>
               </li>
               <li className="flex my-3">
                 <div>
-                  <img
-                    src="./assets/images/icon-list.svg"
-                    className="inline-block pr-4"
-                    alt=""
-                  />
+                  <Image src={svgIcon} width={21} height={21} alt="" />
                 </div>
-                Measuring to ensure updates are a success
+                <div className="pl-4">
+                  Measuring to ensure updates are a success
+                </div>
               </li>
               <li className="flex mb-6">
                 <div>
-                  <img
-                    src="./assets/images/icon-list.svg"
-                    className="inline-block pr-4"
-                    alt=""
-                  />
+                  <Image src={svgIcon} width={21} height={21} alt="" />
                 </div>
-                <div>And much more!</div>
+                <div className="pl-4">And much more!</div>
               </li>
             </ul>
             <div>
@@ -105,31 +102,18 @@ export default function Home() {
             </div>
           </div>
           <div>
-            {!isMobile && (
-              <img
-                src="./assets/images/illustration-sign-up-desktop.svg"
-                alt=""
-              />
-            )}
+            {!isMobile && <Image src={svgImgDesktop} alt="" />}
 
-            {isMobile && (
-              <img
-                src="./assets/images/illustration-sign-up-mobile.svg"
-                className="w-full"
-                alt=""
-              />
-            )}
+            {isMobile && <Image src={svgImgMobile} className="w-full" alt="" />}
           </div>
         </div>
       )}
       {send && (
         <div className="container flex flex-col max-w-md font-semibold bg-white py-12 px-14 md:rounded-3xl">
-          <img
-            src="./assets/images/icon-success.svg"
-            className="w-14 h-14"
-            alt=""
-          />
-          <h1 className="text-4xl sm:text-5xl font-bold my-8">Thanks for subscribing!</h1>
+          <Image src={svgSuccess} className="w-14 h-14" alt="" />
+          <h1 className="text-4xl sm:text-5xl font-bold my-8">
+            Thanks for subscribing!
+          </h1>
           <p className="">
             A confirmation email has been sent to <strong>{email}</strong>.
             Please open it and click the button inside to confirm your
