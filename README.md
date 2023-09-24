@@ -44,7 +44,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/wait4ndbleed/newsletter-sign-up-with-success-message-main/](https://github.com/wait4ndbleed/newsletter-sign-up-with-success-message-main/)
-- Live Site URL: [https://wondrous-travesseiro-2b868c.netlify.app](https://wondrous-travesseiro-2b868c.netlify.app)
+- Live Site URL: [https://master--vocal-gelato-b59f99.netlify.app](https://master--vocal-gelato-b59f99.netlify.app)
 
 ## My process
 
@@ -56,7 +56,7 @@ Users should be able to:
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
-- [Tailwind](https://tailwindcss.com/) - For CSS
+- [Tailwindcss](https://tailwindcss.com/) - For CSS
 - [React Hook Form](https://react-hook-form.com/) - Form Validation library
 
 
