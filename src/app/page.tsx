@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Image from "next/image";
-import svgImgDesktop from "./assets/images/illustration-sign-up-desktop.svg";
+import svgImgDesktop from "../../public/assets/images/illustration-sign-up-desktop.svg";
 import svgImgMobile from "./assets/images/illustration-sign-up-mobile.svg";
 import svgIcon from "./assets/images/icon-list.svg";
 import svgSuccess from "./assets/images/icon-success.svg";
