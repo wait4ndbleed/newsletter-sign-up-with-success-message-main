@@ -102,7 +102,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            {!isMobile && <Image src={svgImgDesktop} alt="" />}
+            {!isMobile && <Image src="https://raw.githubusercontent.com/wait4ndbleed/newsletter-sign-up-with-success-message-main/e751629b257bb1a8b9914dbb8310a303ffe1aae0/public/assets/images/illustration-sign-up-desktop.svg" alt="" />}
 
             {isMobile && <Image src={svgImgMobile} className="w-full" alt="" />}
           </div>
