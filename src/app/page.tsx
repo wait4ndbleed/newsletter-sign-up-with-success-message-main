@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Image from "next/image";
-import svgImgDesktop from "../../.next/static/media/illustration-sign-up-desktop.04371c02.svg";
+import svgImgDesktop from "../../public/assets/images/illustration-sign-up-desktop.svg";
 import svgImgMobile from "../../public/assets/images/illustration-sign-up-mobile.svg";
 import svgIcon from "../../public/assets/images/icon-list.svg";
 import svgSuccess from "../../public/assets/images/icon-success.svg";
@@ -102,7 +102,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            {!isMobile && <img src="https://raw.githubusercontent.com/wait4ndbleed/newsletter-sign-up-with-success-message-main/e751629b257bb1a8b9914dbb8310a303ffe1aae0/public/assets/images/illustration-sign-up-desktop.svg" alt="" />}
+            {!isMobile && <Image src={svgImgDesktop} alt="" />}
 
             {isMobile && <Image src={svgImgMobile} className="w-full" alt="" />}
           </div>
