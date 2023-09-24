@@ -43,9 +43,10 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/wait4ndbleed/huddle-landing-page-with-single-introductory-section-master](https://github.com/wait4ndbleed/huddle-landing-page-with-single-introductory-section-master)
+- Solution URL: [https://github.com/wait4ndbleed/newsletter-sign-up-with-success-message-main/](https://github.com/wait4ndbleed/newsletter-sign-up-with-success-message-main/)
 - Live Site URL: [https://wondrous-travesseiro-2b868c.netlify.app](https://wondrous-travesseiro-2b868c.netlify.app)
 
+## My process
 
 ### Built with
 
