@@ -57,7 +57,7 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
 - [Tailwind](https://tailwindcss.com/) - For CSS
-- [React Hook Form](https://react-hook-form.com/) - Form Validation
+- [React Hook Form](https://react-hook-form.com/) - Form Validation library
 
 
 ## Author
