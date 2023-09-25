@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import Image from "next/image";
 import svgImgDesktop from "../../public/assets/images/illustration-sign-up-desktop.svg";
 import svgImgMobile from "../../public/assets/images/illustration-sign-up-mobile.svg";
@@ -15,7 +15,8 @@ type Input = {
 export default function Home() {
   const {
     handleSubmit,
-    register,
+    reset,
+    control,
     formState: { errors },
   } = useForm<Input>();
   const [send, setSend] = useState<boolean>(false);
@@ -24,6 +25,7 @@ export default function Home() {
   const handleFormSubmit: SubmitHandler<Input> = (data) => {
     setSend(true);
     setEmail(data.email);
+    reset();
   };
 
   const [isMobile, setIsMobile] = useState(false);
@@ -35,6 +37,10 @@ export default function Home() {
       setIsMobile(false);
     }
   };
+
+  const handleDismiss = () => {
+    setSend(false);
+  }
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -81,18 +87,27 @@ export default function Home() {
                 </div>
               </div>
               <form onSubmit={handleSubmit(handleFormSubmit)}>
-                <input
-                  {...register("email", {
+                <Controller
+                  name="email"
+                  control={control}
+                  rules={{
                     required: true,
-                    pattern:
-                      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                  })}
-                  type="text"
-                  placeholder="ash@loremcompany.com"
-                  className={`border border-[#9294A0]/40 ${
-                    errors.email && "border-red-500 text-red-500 bg-red-300/30"
-                  } rounded-lg p-4 font-normal w-full mt-2`}
+                      pattern:
+                        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                  }}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="text"
+                      placeholder="ash@loremcompany.com"
+                      className={`border 
+                      ${
+                        errors.email ? "border-red-500 text-red-500 bg-red-300/30 outline-none" : "border-[#9294A0]/40"
+                      } rounded-lg p-4 font-normal w-full mt-2`}
+                    />
+                  )}
                 />
+                
                 <input
                   type="submit"
                   className="text-xs md:text-base text-center bg-[#232742] text-white rounded-lg w-full p-4 mt-4 cursor-pointer hover:bg-gradient-to-r from-[#ff537b] to-[#ff6938] hover:shadow-lg hover:shadow-[#ff6938]/70"
@@ -119,7 +134,10 @@ export default function Home() {
             Please open it and click the button inside to confirm your
             subscription.
           </p>
-          <button className="text-center bg-[#232742] text-white rounded-lg w-full p-4 mt-52 md:mt-4 cursor-pointer hover:bg-gradient-to-r from-[#ff537b] to-[#ff6938] hover:shadow-lg hover:shadow-[#ff6938]/70">
+          <button
+            onClick={handleDismiss}
+            className="text-center bg-[#232742] text-white rounded-lg w-full p-4 mt-52 md:mt-4 cursor-pointer hover:bg-gradient-to-r from-[#ff537b] to-[#ff6938] hover:shadow-lg hover:shadow-[#ff6938]/70"
+          >
             Dismiss message
           </button>
         </div>
