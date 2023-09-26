@@ -11,13 +11,11 @@ import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
   subsets: ['latin'],
-  variable: '--font-roboto',
   weight: ['400']
 });
 
 const robotoB = Roboto({
   subsets: ['latin'],
-  variable: '--font-roboto',
   weight: ['700']
 });
 
@@ -74,7 +72,7 @@ export default function Home() {
         <div className="container flex flex-col-reverse md:flex-row font-semibold bg-white max-w-4xl md:p-6 md:rounded-3xl">
           <div className="flex items-center">
           <div className="p-6 mr-10">
-            <h1 className={`${robotoB.className} text-4xl md:text-6xl`}>Stay updated!</h1>
+            <h1 className={`${robotoB.className} font-bold text-4xl md:text-6xl`}>Stay updated!</h1>
             <p className={`my-4 md:text-lg ${roboto.className}`}>
               Join 60,000+ product managers recieving monthly updates on:
             </p>
@@ -104,8 +102,8 @@ export default function Home() {
             </ul>
             <div>
               <div className="flex justify-between text-xs font-bold">
-                <div className={`${roboto.className}`}>Email address</div>
-                <div className={`text-red-500 ${roboto.className}`}>
+                <div className={`${robotoB.className}`}>Email address</div>
+                <div className={`text-red-500 ${robotoB.className}`}>
                   {errors.email && "Valid email required"}
                 </div>
               </div>
@@ -150,7 +148,7 @@ export default function Home() {
       {send && (
         <div className="container flex flex-col max-w-md font-semibold bg-white py-12 px-14 md:rounded-3xl">
           <Image src={svgSuccess} className="w-14 h-14" alt="" />
-          <h1 className={`${roboto.variable} text-4xl sm:text-5xl font-bold my-8 `}>
+          <h1 className={`${robotoB.className} text-4xl sm:text-5xl font-bold my-8 `}>
             Thanks for subscribing!
           </h1>
           <p className={`md:text-sm ${roboto.className} mb-6`}>
