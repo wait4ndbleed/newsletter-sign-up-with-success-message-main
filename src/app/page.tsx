@@ -12,8 +12,16 @@ import { Roboto } from "next/font/google";
 const roboto = Roboto({
   subsets: ['latin'],
   variable: '--font-roboto',
-  weight: ['400', '700']
+  weight: ['400']
 });
+
+const robotoB = Roboto({
+  subsets: ['latin'],
+  variable: '--font-roboto',
+  weight: ['700']
+});
+
+
 
 
 
@@ -64,9 +72,10 @@ export default function Home() {
       `}</style>
       {!send && (
         <div className="container flex flex-col-reverse md:flex-row font-semibold bg-white max-w-4xl md:p-6 md:rounded-3xl">
-          <div className="p-6">
-            <h1 className={`${roboto.variable} text-4xl md:text-6xl font-bold`}>Stay updated!</h1>
-            <p className={`my-3 md:text-lg ${roboto.className}`}>
+          <div className="flex items-center">
+          <div className="p-6 mr-10">
+            <h1 className={`${robotoB.className} text-4xl md:text-6xl`}>Stay updated!</h1>
+            <p className={`my-4 md:text-lg ${roboto.className}`}>
               Join 60,000+ product managers recieving monthly updates on:
             </p>
             <ul>
@@ -124,11 +133,12 @@ export default function Home() {
                 
                 <input
                   type="submit"
-                  className={`text-xs md:text-base text-center bg-[#232742] text-white rounded-lg w-full p-4 mt-4 cursor-pointer hover:bg-gradient-to-r from-[#ff537b] to-[#ff6938] hover:shadow-lg hover:shadow-[#ff6938]/70 ${roboto.className}`}
+                  className={`text-xs md:text-base text-center bg-[#232742] text-white rounded-lg w-full p-4 mt-6 cursor-pointer hover:bg-gradient-to-r from-[#ff537b] to-[#ff6938] hover:shadow-lg hover:shadow-[#ff6938]/70 ${roboto.className}`}
                   value="Subscribe to monthly newsletter"
                 />
               </form>
             </div>
+          </div>
           </div>
           <div>
             {!isMobile && <Image src={svgImgDesktop} alt="" />}
@@ -143,7 +153,7 @@ export default function Home() {
           <h1 className={`${roboto.variable} text-4xl sm:text-5xl font-bold my-8 `}>
             Thanks for subscribing!
           </h1>
-          <p className={`md:text-sm ${roboto.variable} mb-6`}>
+          <p className={`md:text-sm ${roboto.className} mb-6`}>
             A confirmation email has been sent to <strong>{email}</strong>.
             Please open it and click the button inside to confirm your
             subscription
